@@ -1,0 +1,273 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --text: #252a30;
+  --muted: #68717b;
+  --rule: #d9dde1;
+  --accent: #245b88;
+  --background: #fcfcfb;
+  --content-width: 1060px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.62;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover,
+a:focus {
+  color: #173e5d;
+}
+
+.site-shell {
+  width: min(var(--content-width), calc(100% - 3rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  display: grid;
+  grid-template-columns: 235px 1fr;
+  gap: 4rem;
+  align-items: start;
+  padding: 4rem 0 2.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.identity h1 {
+  margin: 0 0 0.9rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.15rem;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.portrait {
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 0.85rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.role {
+  margin: 0 0 1rem;
+  font-size: 0.92rem;
+  line-height: 1.48;
+}
+
+.profile-link {
+  margin: 1.4rem 0 0;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.25rem;
+  padding-top: 0.45rem;
+  font-size: 0.9rem;
+}
+
+main {
+  min-width: 0;
+}
+
+section {
+  padding: 2.55rem 0 0.25rem;
+  scroll-margin-top: 1rem;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  color: #1d252d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+h3 {
+  margin: 1.55rem 0 0.5rem;
+  color: #303942;
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+p {
+  margin: 0 0 0.9rem;
+}
+
+.interests {
+  margin-top: 1.25rem;
+  color: #46515b;
+  font-size: 0.94rem;
+}
+
+.news-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.news-list li {
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  gap: 1rem;
+  margin: 0 0 0.62rem;
+}
+
+.news-list time,
+.date,
+.muted {
+  color: var(--muted);
+}
+
+.news-list time {
+  font-size: 0.92rem;
+}
+
+.publication-year {
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  gap: 1.1rem;
+  border-top: 1px solid var(--rule);
+  padding: 1.1rem 0 0.25rem;
+}
+
+.publication-year h3 {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.bibliography {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.bibliography li {
+  padding-left: 0.25rem;
+  margin: 0 0 0.95rem;
+}
+
+.bibliography li::marker {
+  color: var(--muted);
+}
+
+.supervision-entry {
+  margin: 0 0 1.15rem;
+}
+
+.supervision-entry p {
+  margin: 0.15rem 0 0;
+}
+
+.supervision-entry .muted {
+  font-size: 0.9rem;
+}
+
+.timeline-entry {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  column-gap: 1.4rem;
+  border-top: 1px solid var(--rule);
+  padding: 1.15rem 0 0.7rem;
+}
+
+.timeline-entry .date {
+  grid-row: span 4;
+  margin: 0;
+  font-size: 0.91rem;
+}
+
+.timeline-entry h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.organization {
+  margin: 0.1rem 0 0.65rem;
+}
+
+.timeline-entry ul {
+  margin: 0.25rem 0 0.35rem;
+  padding-left: 1.2rem;
+}
+
+.timeline-entry p:last-child {
+  margin-bottom: 0.25rem;
+}
+
+footer {
+  margin-top: 3.5rem;
+  padding: 1.5rem 0 2.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+@media (max-width: 700px) {
+  .site-shell {
+    width: min(100% - 2rem, var(--content-width));
+  }
+
+  .site-header {
+    display: block;
+    padding-top: 2.5rem;
+  }
+
+  nav {
+    margin-top: 1.8rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--rule);
+    gap: 0.35rem 1rem;
+  }
+
+  section {
+    padding-top: 2.15rem;
+  }
+
+  .news-list li,
+  .publication-year,
+  .timeline-entry {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .news-list time {
+    display: block;
+    margin-bottom: 0.05rem;
+  }
+
+  .publication-year h3 {
+    margin-bottom: 0.25rem;
+  }
+
+  .timeline-entry .date {
+    grid-row: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
